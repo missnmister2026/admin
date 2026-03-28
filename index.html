@@ -228,19 +228,6 @@ input:focus{border-color:var(--gold-d)}
       <div class="stats-head"><div class="stats-title">Perechea Favorită 💑</div><div class="stats-tot" id="tot-couple">0 voturi</div></div>
       <div id="rows-couple"><p style="color:var(--tx-d);font-style:italic;text-align:center;padding:20px">Se încarcă...</p></div>
     </div>
-
-    <!-- Miss -->
-    <div class="stats-block">
-      <div class="stats-head"><div class="stats-title">Miss Liceu 👸</div><div class="stats-tot" id="tot-miss">0 voturi</div></div>
-      <div id="rows-miss"><p style="color:var(--tx-d);font-style:italic;text-align:center;padding:20px">Se încarcă...</p></div>
-    </div>
-
-    <!-- Mister -->
-    <div class="stats-block">
-      <div class="stats-head"><div class="stats-title">Mister Liceu 🤴</div><div class="stats-tot" id="tot-mister">0 voturi</div></div>
-      <div id="rows-mister"><p style="color:var(--tx-d);font-style:italic;text-align:center;padding:20px">Se încarcă...</p></div>
-    </div>
-
   </div>
 
   <div class="admin-foot">
@@ -355,11 +342,7 @@ input:focus{border-color:var(--gold-d)}
     document.getElementById("total-votes").textContent = grand || 0;
     document.getElementById("upd").textContent = "Actualizat: " + new Date().toLocaleTimeString("ro-RO");
     document.getElementById("tot-couple").textContent  = `${tot(couples)} voturi`;
-    document.getElementById("tot-miss").textContent    = `${tot(misses)} voturi`;
-    document.getElementById("tot-mister").textContent  = `${tot(misters)} voturi`;
     document.getElementById("rows-couple").innerHTML  = buildRows(couples);
-    document.getElementById("rows-miss").innerHTML    = buildRows(misses);
-    document.getElementById("rows-mister").innerHTML  = buildRows(misters);
   }
 
   /* ── FIREBASE LISTENERS ── */

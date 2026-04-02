@@ -250,23 +250,12 @@ input:focus{border-color:var(--gold-d)}
 
   /* ── DATA ── */
   const couples = [
-    { id:"couple1", label:"Hathor și Horus 👑✨",    sub:"Jiga Ștefania (IX A) & Vărzar Luca (IX D)",        order:"Perechea a 4-a" },
-    { id:"couple2", label:"Nephthys și Ra 🤍✨",      sub:"Nistor Natalia (IX D) & Cotrău Răzvan (IX B)",     order:"Perechea a 3-a" },
-    { id:"couple3", label:"Cleopatra și Ramses 🤎✨", sub:"Popoviciu Claudia (IX A) & Pop Alessandro (IX D)", order:"Perechea a 2-a" },
-    { id:"couple4", label:"Isis și Osiris 👑✨",      sub:"Andrași Bianca (IX A) & Sudrijan Cătălin (X D)",   order:"Prima Pereche"  }
+    { id:"couple1", label:"Isis și Osiris 👑✨",       sub:"Andrași Bianca (IX A) & Sudrijan Cătălin (X D)",   order:"Prima Pereche"  },
+    { id:"couple2", label:"Cleopatra și Ramses 🤎✨",  sub:"Popoviciu Claudia (IX A) & Pop Alessandro (IX D)", order:"Perechea a 2-a" },
+    { id:"couple3", label:"Nephthys și Ra 🤍✨",       sub:"Nistor Natalia (IX D) & Cotrău Răzvan (IX B)",     order:"Perechea a 3-a" },
+    { id:"couple4", label:"Hathor și Horus 👑✨",      sub:"Jiga Ștefania (IX A) & Vărzar Luca (IX D)",        order:"Perechea a 4-a" }
   ];
-  const misses = [
-    { id:"miss1", label:"Jiga Ștefania",     sub:"Clasa IX A" },
-    { id:"miss2", label:"Nistor Natalia",    sub:"Clasa IX D" },
-    { id:"miss3", label:"Popoviciu Claudia", sub:"Clasa IX A" },
-    { id:"miss4", label:"Andrași Bianca",    sub:"Clasa IX A" }
-  ];
-  const misters = [
-    { id:"mister1", label:"Vărzar Luca",      sub:"Clasa IX D" },
-    { id:"mister2", label:"Cotrău Răzvan",    sub:"Clasa IX B" },
-    { id:"mister3", label:"Pop Alessandro",   sub:"Clasa IX D" },
-    { id:"mister4", label:"Sudrijan Cătălin", sub:"Clasa X D"  }
-  ];
+
 
   /* ── STATE ── */
   let votes = {};
@@ -338,7 +327,7 @@ input:focus{border-color:var(--gold-d)}
   }
 
   function render() {
-    const grand = Math.round([...couples,...misses,...misters].reduce((s,c)=>s+v(c.id),0)/3);
+    const grand = couples.reduce((s,c)=>s+v(c.id),0);
     document.getElementById("total-votes").textContent = grand || 0;
     document.getElementById("upd").textContent = "Actualizat: " + new Date().toLocaleTimeString("ro-RO");
     document.getElementById("tot-couple").textContent  = `${tot(couples)} voturi`;
